@@ -1,59 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Fundo da Janela (Background):-->
+
+<!--    Use @color/surface_light ou @color/tertiary_water_blue.
+Isso faz os elementos verdes "saltarem" aos olhos sem cansar a vista.-->
+
+<!--    Código no Layout:
+            android:background="@color/surface_light"-->
+
+<!--    Botões de Ação (Confirmar/Salvar):-->
+
+    <!--    Use @color/primary_green. Transmite que está tudo "OK" ou "Crescendo".-->
+
+<!--        Código: android:backgroundTint="@color/primary_green"-->
+
+<!--    Botões de Alerta ou Emergência:-->
+
+<!--        Use @color/accent_orange.
+            O laranja é o oposto complementar do azul/verde, então ele chama atenção imediata se a temperatura ou o PH estiverem errados.-->
+
+<!--    Cards de Dados (Ex: Nível de PH, Umidade):-->
+
+<!--        Use o fundo do Card como @color/white
+            e coloque uma borda ou detalhe em @color/primary_green_light.-->
+
+<!--    Barra de Cima (Toolbar):-->
+
+    <!--    Use @color/secondary_teal.
+               Dá um ar de app de gerenciamento sério e profissional.-->
+
+<!--    Dica de Design para Hidroponia:-->
+<!--    Como seu app lida com água, o fundo levemente azulado
+(tertiary_water_blue) nas áreas onde você mostra os níveis do
+reservatório vai tornar a interface muito mais intuitiva para o usuário!-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/surface_light"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonAcessarEstufas"
+        style="@style/MaterialAlertDialog.Material3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="250dp"
+        android:backgroundTint="@color/primary_green"
+        android:lineSpacingExtra="8sp"
         android:text="Acessar Estufas"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
         tools:text="Acessar Estufas" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:lineSpacingExtra="10sp"
         android:text="Menu"
         android:textAlignment="center"
-        android:textColor="#009688"
-        android:textSize="34sp"
+        android:textColor="@color/secondary_teal"
+        android:textSize="48sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAcessarEstufas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/primary_green"
         android:text="Nova Leitura"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAcessarEstufas" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/white"
         android:text="Ver Alertas"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="375dp" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAcessarEstufas"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
