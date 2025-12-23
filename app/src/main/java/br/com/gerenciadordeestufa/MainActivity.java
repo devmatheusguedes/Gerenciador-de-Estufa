@@ -7,16 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Menu");
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container,
+                            new HomeFragment())
+                    .commit();
+        }
+    }
 
-        Button btnEstufas = findViewById(R.id.buttonAcessarEstufas);
-        btnEstufas.setOnClickListener(v -> {
-            startActivity(new Intent(this, EstufaActivity.class));
-        });
+    public void setToolbarTitle(String title){
+        setTitle(title);
     }
 } 
