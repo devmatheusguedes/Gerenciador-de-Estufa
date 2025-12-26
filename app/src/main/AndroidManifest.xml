@@ -21,11 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".EstufaActivity"
-            android:exported="false">
-
-        </activity>
     </application>
 
 </manifest>

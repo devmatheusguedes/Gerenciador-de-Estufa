@@ -4,43 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textEstufa"
     android:layout_width="match_parent"
-    android:background="@color/surface_light"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    style="@style/ScreenBackground">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="183dp"
-        android:text="Estufas"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        android:textColor="@color/secondary_teal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonListarEstufas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="159dp"
-        android:text="Listar Estufas"
+        android:layout_marginTop="113dp"
         android:backgroundTint="@color/primary_green"
+        android:text="Listar Estufas"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
@@ -65,15 +48,16 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="158dp"
         android:layout_marginBottom="365dp"
-        android:text="Selecionar Estufa Ativa"
         android:backgroundTint="@color/primary_green"
+        android:text="Selecionar Estufa Ativa"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!--Fundo da Janela (Background):-->
