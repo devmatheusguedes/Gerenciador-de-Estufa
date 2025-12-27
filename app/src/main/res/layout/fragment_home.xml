@@ -8,7 +8,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".ui.home.HomeFragment">
+
+    >
 
     <!-- Dashboard / Resumo de alertas -->
     <androidx.cardview.widget.CardView
@@ -23,6 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:layout_margin="10dp"
+            android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -32,24 +35,24 @@
                 style="@style/DataCardTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alertas"
-                android:paddingBottom="4dp"/>
+                android:paddingBottom="4dp"
+                android:text="Alertas" />
 
             <TextView
                 android:id="@+id/tv_alerts_count"
                 style="@style/DataCardValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3 Ativos"/>
+                android:text="3 Ativos" />
 
             <TextView
                 android:id="@+id/tv_alerts_last"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_secondary"
-                android:textSize="13sp"
+                android:paddingTop="8dp"
                 android:text="Último: Alta de pH na Caixa 2 — 2h atrás"
-                android:paddingTop="8dp"/>
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -76,31 +79,31 @@
             android:layout_marginEnd="8dp">
 
             <LinearLayout
+                android:id="@+id/card_estufas_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/primary_green"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="0dp">
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_greenhouse"
-                    android:contentDescription="Ícone Estufas" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Estufas"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"/>
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5 cadastradas"
+                    android:textColor="@color/white"
                     android:textSize="12sp"
-                    android:textColor="@color/text_secondary"/>
+
+                    />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -119,27 +122,27 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="0dp">
+                android:padding="0dp"
+                android:background="@color/tertiary_water_blue"
+                >
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_water_tank"
-                    android:contentDescription="Ícone Caixas D'água" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Caixas D'água"
                     android:textStyle="bold"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8 cadastradas"
                     android:textSize="12sp"
-                    android:textColor="@color/text_secondary"/>
+                    android:textColor="@color/black"
+                />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -147,23 +150,23 @@
     </LinearLayout>
 
     <!-- Botão Grande para Nova Leitura -->
+
+    <!-- Espaço reservado / rodapé -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_new_reading"
         style="@style/ButtonPrimary"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:text="Nova Leitura"
-        android:textAllCaps="false"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/shortcuts_container"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:icon="@drawable/ic_plus"
+        android:layout_marginTop="40dp"
         android:iconGravity="textStart"
         android:iconPadding="12dp"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:text="Nova Leitura"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shortcuts_container" />
 
-    <!-- Espaço reservado / rodapé -->
     <TextView
         android:id="@+id/tv_home_footer"
         android:layout_width="wrap_content"

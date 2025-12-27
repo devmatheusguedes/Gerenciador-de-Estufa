@@ -12,33 +12,14 @@ import androidx.fragment.app.Fragment;
 
 
 public class HomeFragment extends Fragment {
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (getActivity() != null){
-            getActivity().setTitle("Menu");
-        }
-        View view = inflater.inflate(
-                R.layout.fragment_home, container, false
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        View cardEstufas = view.findViewById(R.id.card_estufas_id);
+        cardEstufas.setOnClickListener(v ->{
+            NavHostFragment
+                }
         );
-
-        Button buttonAcessarEstufas = view.findViewById(R.id.acessarEstufas);
-
-        buttonAcessarEstufas.setOnClickListener(v -> abrirEstufas());
-        return view;
-    }
-
-    private void abrirEstufas(){
-        trocarfragment(new EstufasFragment(), "EStufas");
-    }
-
-    private void trocarfragment(Fragment fragment, String titulo) {
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction().replace(
-                        R.id.fragment_container, fragment)
-                .addToBackStack(null)
-                .commit();
-
-        requireActivity().setTitle(titulo);
     }
 }
