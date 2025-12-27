@@ -1,53 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/fragment_water_tanks_root"
+    style="@style/WaterSectionBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
-    style="@style/WaterSectionBackground"
-    >
+    android:orientation="vertical">
 
+    <!-- Header visual azul -->
+    <LinearLayout
+        android:id="@+id/header_water_tanks"
+        android:background="@color/primary_green"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="bottom">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:backgroundTint="@color/primary_green"
-        android:text="Listar Caixas de Estufa"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        <TextView
+            android:id="@+id/tv_water_tanks_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caixas D'água"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_water_tanks_header_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monitore volumes e leituras"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Lista -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_water_tanks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
 
         />
 
-    <Button
-        android:id="@+id/buttonCadastrarCaixa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Cadastrar Caixa"
-        android:backgroundTint="@color/primary_green"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+    <!-- Botão de cadastro -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_water_tank"
+        style="@style/ButtonPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Cadastrar Caixa D'água"
+        android:layout_margin="12dp"
+        android:icon="@drawable/ic_add"
+        android:iconGravity="textStart"
+        android:iconPadding="12dp"/>
 
-    <Button
-        android:id="@+id/buttonEditarCaia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Editar Caixa"
-        android:backgroundTint="@color/primary_green"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCadastrarCaixa"
-        app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
