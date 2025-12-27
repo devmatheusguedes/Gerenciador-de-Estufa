@@ -1,96 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/textEstufa"
+    android:id="@+id/fragment_greenhouses_root"
+    style="@style/ScreenBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
-    style="@style/ScreenBackground">
+    android:padding="0dp"
+    tools:context=".ui.greenhouses.GreenhousesFragment">
 
-
-    <Button
-        android:id="@+id/buttonListarEstufas"
-        android:layout_width="wrap_content"
+    <!-- App Bar / Toolbar com título visível -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginTop="113dp"
-        android:backgroundTint="@color/primary_green"
-        android:text="Listar Estufas"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="162dp"
-        android:text="Cadastrar Estufas"
-        android:backgroundTint="@color/primary_green"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonListarEstufas" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="365dp"
-        android:backgroundTint="@color/primary_green"
-        android:text="Selecionar Estufa Ativa"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_greenhouses"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Estufas"
+            app:titleTextColor="@color/white"
+            app:titleCentered="true"
+            android:titleTextColor="@color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIconTint="@color/white"
+            android:background="@color/secondary_teal" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Container de conteúdo: pesquisa + lista -->
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_greenhouse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Campo de pesquisa -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_greenhouse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:queryHint="Pesquisar estufa..."
+                android:iconifiedByDefault="false"
+                android:contentDescription="Pesquisar estufas"
+                android:background="@color/primary_green_dark"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Espaço -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <!-- RecyclerView que ocupa o resto do espaço do container -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_greenhouses"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp"
+            android:scrollbars="vertical"
+            android:contentDescription="Lista de estufas cadastradas"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </LinearLayout>
+
+    <!-- Botão fixo na parte inferior para cadastrar nova estufa -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_greenhouse"
+        style="@style/ButtonPrimary"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Adicionar Estufas"
+        android:textAllCaps="false"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!--Fundo da Janela (Background):-->
-
-    <!--    Use @color/surface_light ou @color/tertiary_water_blue.
-    Isso faz os elementos verdes "saltarem" aos olhos sem cansar a vista.-->
-
-    <!--    Código no Layout:
-                android:background="@color/surface_light"-->
-
-    <!--    Botões de Ação (Confirmar/Salvar):-->
-
-    <!--    Use @color/primary_green. Transmite que está tudo "OK" ou "Crescendo".-->
-
-    <!--        Código: android:backgroundTint="@color/primary_green"-->
-
-    <!--    Botões de Alerta ou Emergência:-->
-
-    <!--        Use @color/accent_orange.
-                O laranja é o oposto complementar do azul/verde, então ele chama atenção imediata se a temperatura ou o PH estiverem errados.-->
-
-    <!--    Cards de Dados (Ex: Nível de PH, Umidade):-->
-
-    <!--        Use o fundo do Card como @color/white
-                e coloque uma borda ou detalhe em @color/primary_green_light.-->
-
-    <!--    Barra de Cima (Toolbar):-->
-
-    <!--    Use @color/secondary_teal.
-               Dá um ar de app de gerenciamento sério e profissional.-->
-
-    <!--    Dica de Design para Hidroponia:-->
-    <!--    Como seu app lida com água, o fundo levemente azulado
-    (tertiary_water_blue) nas áreas onde você mostra os níveis do
-    reservatório vai tornar a interface muito mais intuitiva para o usuário!-->
 </androidx.constraintlayout.widget.ConstraintLayout>
