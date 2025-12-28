@@ -24,19 +24,24 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:layout_margin="10dp"
+            android:id="@+id/card_alertas_id"
+            android:layout_margin="0dp"
             android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
 
             <TextView
                 android:id="@+id/tv_alerts_title"
-                style="@style/DataCardTitle"
                 android:layout_width="wrap_content"
+                android:textColor="@color/primary_green_dark"
                 android:layout_height="wrap_content"
                 android:paddingBottom="4dp"
-                android:text="Alertas" />
+                android:text="Alertas"
+
+                />
 
             <TextView
                 android:id="@+id/tv_alerts_count"
@@ -118,6 +123,7 @@
             android:layout_marginStart="8dp">
 
             <LinearLayout
+                android:id="@+id/card_caixas_dagua_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -158,8 +164,6 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="40dp"
-        android:iconGravity="textStart"
-        android:iconPadding="12dp"
         android:padding="12dp"
         android:text="Nova Leitura"
         android:textAllCaps="false"

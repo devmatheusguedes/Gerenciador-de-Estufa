@@ -58,8 +58,6 @@
         android:layout_height="56dp"
         android:text="Cadastrar Caixa D'água"
         android:layout_margin="12dp"
-        android:icon="@drawable/ic_add"
-        android:iconGravity="textStart"
-        android:iconPadding="12dp"/>
+        />
 
 </LinearLayout>
