@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.com.gerenciadordeestufa.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_estufasFragment2"
+            app:destination="@id/estufasFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_caixaDaguaFragment"
+            app:destination="@id/caixaDaguaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_novaleituraFragment"
+            app:destination="@id/novaleituraFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_alertaFragment"
+            app:destination="@id/alertaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estufasFragment2"
+        android:name="br.com.gerenciadordeestufa.EstufasFragment"
+        android:label="EstufasFragment" />
+    <fragment
+        android:id="@+id/caixaDaguaFragment"
+        android:name="br.com.gerenciadordeestufa.CaixaDaguaFragment"
+        android:label="CaixaDaguaFragment" />
+    <fragment
+        android:id="@+id/novaleituraFragment"
+        android:name="br.com.gerenciadordeestufa.NovaleituraFragment"
+        android:label="NovaleituraFragment" />
+    <fragment
+        android:id="@+id/alertaFragment"
+        android:name="br.com.gerenciadordeestufa.AlertaFragment"
+        android:label="AlertaFragment" />
+
 
 </navigation>

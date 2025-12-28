@@ -33,7 +33,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.jetbrains.kotlin') {
+            details.useVersion "1.8.22" // Força uma versão única para todas
+        }
+    }
+}
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
