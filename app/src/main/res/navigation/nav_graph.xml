@@ -23,7 +23,11 @@
     <fragment
         android:id="@+id/estufasFragment2"
         android:name="br.com.gerenciadordeestufa.EstufasFragment"
-        android:label="EstufasFragment" />
+        android:label="EstufasFragment" >
+        <action
+            android:id="@+id/action_estufasFragment2_to_cadastroEstufaFragment"
+            app:destination="@id/cadastroEstufaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/caixaDaguaFragment"
         android:name="br.com.gerenciadordeestufa.CaixaDaguaFragment"
@@ -36,6 +40,10 @@
         android:id="@+id/alertaFragment"
         android:name="br.com.gerenciadordeestufa.AlertaFragment"
         android:label="AlertaFragment" />
+    <fragment
+        android:id="@+id/cadastroEstufaFragment"
+        android:name="br.com.gerenciadordeestufa.CadastroEstufaFragment"
+        android:label="CadastroEstufaFragment" />
 
 
 </navigation>
