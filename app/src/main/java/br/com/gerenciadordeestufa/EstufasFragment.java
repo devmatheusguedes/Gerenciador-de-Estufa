@@ -19,6 +19,12 @@ public class EstufasFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        configurarCliques(view);
+    }
+
     private void configurarCliques(View view) {
         view.findViewById(R.id.btn_add_greenhouse).setOnClickListener(v -> navegar(R.id.action_estufasFragment2_to_cadastroEstufaFragment));
     }
