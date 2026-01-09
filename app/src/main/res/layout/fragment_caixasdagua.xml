@@ -52,7 +52,7 @@
 
     <!-- Botão de cadastro -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_add_water_tank"
+        android:id="@+id/btnCadastrarCaixa"
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="56dp"
