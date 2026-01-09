@@ -181,6 +181,13 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="12dp"/>
 
+    <ImageButton
+        android:id="@+id/btnConfiguracoes"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/engineicon"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="615dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
