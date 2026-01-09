@@ -9,9 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import java.time.Instant;
-import java.util.zip.Inflater;
-
 public class NovaleituraFragment extends Fragment {
     @Nullable
     @Override

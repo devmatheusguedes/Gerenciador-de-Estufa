@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_ideal_parameters_root"
     style="@style/ScreenBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:fillViewport="true"
-    >
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/tertiary_water_blue"
+        >
 
         <TextView
             android:id="@+id/tv_parameters_title"
@@ -22,7 +21,10 @@
             android:text="Parâmetros Ideais"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="12dp"/>
+            android:textColor="@color/primary_green_dark"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="100dp"
+            />
 
         <!-- pH Min / Max -->
         <TextView

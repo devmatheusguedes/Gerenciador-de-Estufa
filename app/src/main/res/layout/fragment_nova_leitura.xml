@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/tertiary_water_blue"
+
+        >
 
         <!-- CAIXA D'ÁGUA -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Caixa d'água">
+            android:hint="Caixa d'água"
+            android:textColorHint="#2B2D30"
+            >
 
             <AutoCompleteTextView
                 android:id="@+id/spinner_caixa_dagua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:background="@color/white"
+
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- PH -->
@@ -28,13 +37,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="pH"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:textColorHint="#2B2D30"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_ph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- TEMPERATURA -->
@@ -42,13 +57,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Temperatura (°C)"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:textColorHint="#2B2D30"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_temperatura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- VOLUME -->
@@ -56,13 +77,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Volume atual (L)"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:textColorHint="#2B2D30"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_volume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- OBSERVAÇÃO -->
@@ -70,7 +98,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Observações"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:textColorHint="#2B2D30"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_observacao"
@@ -79,7 +110,11 @@
                 android:minLines="4"
                 android:maxLines="6"
                 android:gravity="top"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- EC / PPM -->
@@ -87,13 +122,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Condutividade (EC / PPM)"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:textColorHint="#2B2D30"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_ec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <RadioGroup
@@ -101,17 +143,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:textColorHint="#2B2D30"
+            android:padding="10dp"
+            >
 
             <RadioButton
                 android:id="@+id/radio_ec"
                 android:text="EC"
                 android:checked="true" android:layout_height="30dp"
+                 android:layout_width="80dp"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+                android:layout_marginEnd="10dp"
                 />
 
             <RadioButton
                 android:id="@+id/radio_ppm"
-                android:text="PPM" android:layout_height="30dp"/>
+                android:text="PPM" android:layout_height="30dp"
+                android:layout_width="80dp"
+                android:background="@color/white"
+                android:textColor="#2B2D30"
+
+                />
         </RadioGroup>
 
         <com.google.android.material.button.MaterialButton
