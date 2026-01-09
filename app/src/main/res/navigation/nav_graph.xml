@@ -31,7 +31,11 @@
     <fragment
         android:id="@+id/caixaDaguaFragment"
         android:name="br.com.gerenciadordeestufa.CaixaDaguaFragment"
-        android:label="CaixaDaguaFragment" />
+        android:label="CaixaDaguaFragment" >
+        <action
+            android:id="@+id/action_caixaDaguaFragment_to_cadastrarCaixaDaguaFragment"
+            app:destination="@id/cadastrarCaixaDaguaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/novaleituraFragment"
         android:name="br.com.gerenciadordeestufa.NovaleituraFragment"
@@ -44,6 +48,10 @@
         android:id="@+id/cadastroEstufaFragment"
         android:name="br.com.gerenciadordeestufa.CadastroEstufaFragment"
         android:label="CadastroEstufaFragment" />
+    <fragment
+        android:id="@+id/cadastrarCaixaDaguaFragment"
+        android:name="br.com.gerenciadordeestufa.CadastrarCaixaDaguaFragment"
+        android:label="CadastrarCaixaDaguaFragment" />
 
 
 </navigation>
