@@ -12,6 +12,13 @@
             <item name="android:background">@color/tertiary_water_blue</item>
         </style>
 
+        <style name="campoTextoVisualizar">
+            <item name="android:width">200dp</item>
+            <item name="android:height">50dp</item>
+            <item name="android:textColor">@color/black</item>
+            <item name="android:textAlignment">center</item>
+        </style>
+
         <!-- ========================= -->
         <!-- BOTÕES -->
         <!-- ========================= -->

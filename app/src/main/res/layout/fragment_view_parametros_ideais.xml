@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
+            android:layout_marginTop="60dp"
             android:background="@color/tertiary_water_blue"
             >
 
@@ -216,8 +217,10 @@
             <!-- Espaço final -->
             <View
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:background="@color/primary_green_dark" />
+                android:layout_height="10dp"
+                android:background="@color/primary_green_dark"
+                android:layout_marginTop="20dp"
+                />
         </LinearLayout>
     </ScrollView>
 
