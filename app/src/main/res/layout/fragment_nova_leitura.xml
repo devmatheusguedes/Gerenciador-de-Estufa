@@ -2,8 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:paddingTop="70dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     >
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -151,7 +155,8 @@
             <RadioButton
                 android:id="@+id/radio_ec"
                 android:text="EC"
-                android:checked="true" android:layout_height="30dp"
+                android:checked="true"
+                android:layout_height="30dp"
                  android:layout_width="80dp"
                 android:background="@color/white"
                 android:textColor="#2B2D30"
@@ -160,7 +165,8 @@
 
             <RadioButton
                 android:id="@+id/radio_ppm"
-                android:text="PPM" android:layout_height="30dp"
+                android:text="PPM"
+                android:layout_height="30dp"
                 android:layout_width="80dp"
                 android:background="@color/white"
                 android:textColor="#2B2D30"

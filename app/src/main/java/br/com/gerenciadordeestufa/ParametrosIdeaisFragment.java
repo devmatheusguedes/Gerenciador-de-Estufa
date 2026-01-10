@@ -10,28 +10,23 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-public class CaixaDaguaFragment extends Fragment implements FragmentConfigView<View>{
+public class ParametrosIdeaisFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_caixasdagua, container, false);    }
+        return inflater.inflate(R.layout.fragment_view_parametros_ideais, container, false);
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        configurarCliques(view);
-    }
 
-    @Override
-    public void configurarCliques(View view) {
-        view.findViewById(R.id.btnCadastrarCaixa).setOnClickListener(v -> {
-            navegar(R.id.action_caixaDaguaFragment_to_cadastrarCaixaDaguaFragment);
+        ViewConfigurator.configurar(view, v -> {
+            v.findViewById(R.id.btn_edit_parameters)
+                    .setOnClickListener(l -> {
+                        NavHostFragment.findNavController(this)
+                                .navigate(R.id.action_parametrosIdeaisFragment_to_editParametrosIdeaisFragment);
+                    });
         });
-    }
-
-    @Override
-    public void navegar(int actionId) {
-        NavHostFragment.findNavController(this).navigate(actionId);
-
     }
 }

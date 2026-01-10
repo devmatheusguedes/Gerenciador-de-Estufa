@@ -5,7 +5,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.com.gerenciadordeestufa.HomeFragment"
+        android:name="br.com.gerenciadordeestufa.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_estufasFragment2"
@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_alertaFragment"
             app:destination="@id/alertaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_parametrosIdeaisFragment"
+            app:destination="@id/parametrosIdeaisFragment" />
     </fragment>
     <fragment
         android:id="@+id/estufasFragment2"
@@ -30,11 +33,14 @@
     </fragment>
     <fragment
         android:id="@+id/caixaDaguaFragment"
-        android:name="br.com.gerenciadordeestufa.CaixaDaguaFragment"
+        android:name="br.com.gerenciadordeestufa.caixa.CaixaDaguaFragment"
         android:label="CaixaDaguaFragment" >
         <action
             android:id="@+id/action_caixaDaguaFragment_to_cadastrarCaixaDaguaFragment"
             app:destination="@id/cadastrarCaixaDaguaFragment" />
+        <action
+            android:id="@+id/action_caixaDaguaFragment_to_historicoDeLeituraFragment"
+            app:destination="@id/historicoDeLeituraFragment" />
     </fragment>
     <fragment
         android:id="@+id/novaleituraFragment"
@@ -50,8 +56,24 @@
         android:label="CadastroEstufaFragment" />
     <fragment
         android:id="@+id/cadastrarCaixaDaguaFragment"
-        android:name="br.com.gerenciadordeestufa.CadastrarCaixaDaguaFragment"
+        android:name="br.com.gerenciadordeestufa.caixa.CadastrarCaixaDaguaFragment"
         android:label="CadastrarCaixaDaguaFragment" />
+    <fragment
+        android:id="@+id/parametrosIdeaisFragment"
+        android:name="br.com.gerenciadordeestufa.ParametrosIdeaisFragment"
+        android:label="ParametrosIdeaisFragment" >
+        <action
+            android:id="@+id/action_parametrosIdeaisFragment_to_editParametrosIdeaisFragment"
+            app:destination="@id/editParametrosIdeaisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editParametrosIdeaisFragment"
+        android:name="br.com.gerenciadordeestufa.EditParametrosIdeaisFragment"
+        android:label="EditParametrosIdeaisFragment" />
+    <fragment
+        android:id="@+id/historicoDeLeituraFragment"
+        android:name="br.com.gerenciadordeestufa.HistoricoDeLeituraFragment"
+        android:label="HistoricoDeLeituraFragment" />
 
 
 </navigation>

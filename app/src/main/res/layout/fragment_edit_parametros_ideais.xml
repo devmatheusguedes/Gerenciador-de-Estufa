@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="pH"
+            android:textColor="@color/black"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -44,13 +45,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Mínimo">
+                android:hint="Mínimo"
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_ph_min"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -62,13 +68,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Máximo">
+                android:hint="Máximo"
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_ph_max"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -78,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EC / PPM"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginTop="12dp"/>
 
@@ -92,13 +104,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Mínimo">
+                android:hint="Mínimo"
+
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_ec_min"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -110,13 +128,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Máximo">
+                android:hint="Máximo"
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_ec_max"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -127,6 +150,7 @@
             android:layout_height="wrap_content"
             android:text="Temperatura (°C)"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_marginTop="12dp"/>
 
         <LinearLayout
@@ -140,13 +164,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Mínimo">
+                android:hint="Mínimo"
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_temp_min"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -158,13 +187,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Máximo">
+                android:hint="Máximo"
+                android:textColorHint="#01579B"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_temp_max"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="numberDecimal"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
