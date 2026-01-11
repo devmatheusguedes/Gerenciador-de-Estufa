@@ -39,7 +39,7 @@ public class HomeViewModel extends ViewModel {
         evento.setValue(Evento.IR_PARA_PARAMETROS_IDEAIS);
     }
 
-    public void LimparEvento(){
+    public void limparEvento(){
         evento.setValue(null);
     }
 
