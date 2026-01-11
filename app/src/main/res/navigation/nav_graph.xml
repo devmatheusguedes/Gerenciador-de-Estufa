@@ -48,7 +48,7 @@
         android:label="NovaleituraFragment" />
     <fragment
         android:id="@+id/alertaFragment"
-        android:name="br.com.gerenciadordeestufa.AlertaFragment"
+        android:name="br.com.gerenciadordeestufa.alert.AlertaFragment"
         android:label="AlertaFragment" />
     <fragment
         android:id="@+id/cadastroEstufaFragment"
