@@ -2,9 +2,10 @@ package br.com.gerenciadordeestufa.data.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Dao;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Dao
+@Entity(tableName = "parametro_ideal")
 public class ParametroIdealEntity {
     @PrimaryKey(autoGenerate = true)
     private long id;
@@ -32,6 +33,10 @@ public class ParametroIdealEntity {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public double getpHMinimo() {

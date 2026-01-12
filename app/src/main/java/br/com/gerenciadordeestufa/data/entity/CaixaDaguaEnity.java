@@ -15,7 +15,7 @@ public class CaixaDaguaEnity {
 
 
 
-    public CaixaDaguaEnity(double volume){
+    public CaixaDaguaEnity(double volume, String s){
         this.volume = volume;
     }
 
