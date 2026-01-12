@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/novaleituraFragment"
-        android:name="br.com.gerenciadordeestufa.NovaleituraFragment"
+        android:name="br.com.gerenciadordeestufa.leitura.NovaleituraFragment"
         android:label="NovaleituraFragment" />
     <fragment
         android:id="@+id/alertaFragment"
@@ -60,7 +60,7 @@
         android:label="CadastrarCaixaDaguaFragment" />
     <fragment
         android:id="@+id/parametrosIdeaisFragment"
-        android:name="br.com.gerenciadordeestufa.ParametrosIdeaisFragment"
+        android:name="br.com.gerenciadordeestufa.parametros_ideais.ParametrosIdeaisFragment"
         android:label="ParametrosIdeaisFragment" >
         <action
             android:id="@+id/action_parametrosIdeaisFragment_to_editParametrosIdeaisFragment"
@@ -68,11 +68,11 @@
     </fragment>
     <fragment
         android:id="@+id/editParametrosIdeaisFragment"
-        android:name="br.com.gerenciadordeestufa.EditParametrosIdeaisFragment"
+        android:name="br.com.gerenciadordeestufa.parametros_ideais.EditParametrosIdeaisFragment"
         android:label="EditParametrosIdeaisFragment" />
     <fragment
         android:id="@+id/historicoDeLeituraFragment"
-        android:name="br.com.gerenciadordeestufa.HistoricoDeLeituraFragment"
+        android:name="br.com.gerenciadordeestufa.leitura.HistoricoDeLeituraFragment"
         android:label="HistoricoDeLeituraFragment" />
 
 
