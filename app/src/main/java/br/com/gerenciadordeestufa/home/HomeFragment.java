@@ -67,6 +67,7 @@ public class HomeFragment extends Fragment {
                             NavHostFragment
                                     .findNavController(this)
                                     .navigate(R.id.action_homeFragment_to_parametrosIdeaisFragment);
+                            break;
                     }
                 homeViewModel.limparEvento();
                 });

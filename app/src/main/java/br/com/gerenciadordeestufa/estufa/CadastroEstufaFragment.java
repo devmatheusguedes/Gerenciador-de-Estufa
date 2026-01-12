@@ -37,6 +37,7 @@ public class CadastroEstufaFragment extends Fragment {
             switch (evento){
                 case ACAO_CADASTRAR_ESTUFA:
                     System.out.print("Botão sem ação");
+                    break;
             }
 
             cadastrarEstufaViewModel.limparEvento();
