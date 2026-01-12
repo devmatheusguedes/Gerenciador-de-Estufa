@@ -8,9 +8,11 @@ import br.com.gerenciadordeestufa.data.dao.LeituraDao;
 import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 import br.com.gerenciadordeestufa.data.entity.EstufaEntity;
 import br.com.gerenciadordeestufa.data.entity.LeituraEntity;
+import br.com.gerenciadordeestufa.data.entity.ParametroIdealEntity;
 
 @Database(
-        entities = {CaixaDaguaEnity.class, LeituraEntity.class, EstufaEntity.class},
+        entities = {CaixaDaguaEnity.class, LeituraEntity.class,
+                EstufaEntity.class, ParametroIdealEntity.class},
         version = 1
 )
 public abstract class AppDataBase extends RoomDatabase {
