@@ -4,28 +4,26 @@ import android.util.Log;
 
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import br.com.gerenciadordeestufa.GerenciadorEstufaApp;
+import br.com.gerenciadordeestufa.data.dao.BaseDao;
 import br.com.gerenciadordeestufa.data.dao.CaixaDaguaDao;
 import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 
-public class CaixaDaguaRepository {
-
-    private CaixaDaguaDao caixaDaguaDao;
-
-    public CaixaDaguaRepository(){
-        caixaDaguaDao = GerenciadorEstufaApp.getAppDatabase().caixaDaguaDao();
+public class CaixaDaguaRepository{
+    private final CaixaDaguaDao dao;
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    public CaixaDaguaRepository(CaixaDaguaDao dao) {
+        this.dao = dao;
     }
 
-    public void teste(){
-        Executors.newSingleThreadExecutor().execute(() -> {
-            CaixaDaguaEnity caixaDaguaEnity = new CaixaDaguaEnity(500, "caixa 1");
-            caixaDaguaDao.insert(caixaDaguaEnity);
+    public void inserir(CaixaDaguaEnity enity){
+        dao.insert(enity);
+    }
 
-            List<CaixaDaguaEnity> all = caixaDaguaDao.getAll();
-            Log.d("DB_TESTE", "Total de caixas: " + all.size());
-
-        });
+    public List<CaixaDaguaEnity> listarTodasAsCaixas(){
+        return dao.getAll();
     }
 }
