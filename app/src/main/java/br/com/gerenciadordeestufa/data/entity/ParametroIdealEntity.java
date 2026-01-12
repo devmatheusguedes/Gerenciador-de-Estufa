@@ -11,23 +11,25 @@ public class ParametroIdealEntity {
     private long id;
 
     @ColumnInfo(name = "ph_minimo")
-    private double pHMinimo;
+    private double phMinimo;
     @ColumnInfo(name = "ph_maximo")
-    private double pHMaximo;
+    private double phMaximo;
     @ColumnInfo(name = "ec_minimo")
-    private double eCMinimo;
+    private double ecMinimo;
     @ColumnInfo(name = "ec_maximo")
-    private double eCMaximo;
+    private double ecMaximo;
 
     @ColumnInfo(name = "temperatura_ideal")
     private double temperaturaIdeal;
 
-    public ParametroIdealEntity(double pHMinimo, double pHMaximo, double eCMinimo,
-                                double eCMaximo, double temperaturaIdeal) {
-        this.pHMinimo = pHMinimo;
-        this.pHMaximo = pHMaximo;
-        this.eCMinimo = eCMinimo;
-        this.eCMaximo = eCMaximo;
+    public ParametroIdealEntity(){}
+
+    public ParametroIdealEntity(double phMinimo, double phMaximo, double ecMinimo,
+                                double ecMaximo, double temperaturaIdeal) {
+        this.phMinimo = phMinimo;
+        this.phMaximo = phMaximo;
+        this.ecMinimo = ecMinimo;
+        this.ecMaximo = ecMaximo;
         this.temperaturaIdeal = temperaturaIdeal;
     }
 
@@ -39,36 +41,36 @@ public class ParametroIdealEntity {
         this.id = id;
     }
 
-    public double getpHMinimo() {
-        return pHMinimo;
+    public double getPhMinimo() {
+        return phMinimo;
     }
 
-    public void setpHMinimo(double pHMinimo) {
-        this.pHMinimo = pHMinimo;
+    public void setPhMinimo(double phMinimo) {
+        this.phMinimo = phMinimo;
     }
 
-    public double getpHMaximo() {
-        return pHMaximo;
+    public double getPhMaximo() {
+        return phMaximo;
     }
 
-    public void setpHMaximo(double pHMaximo) {
-        this.pHMaximo = pHMaximo;
+    public void setPhMaximo(double phMaximo) {
+        this.phMaximo = phMaximo;
     }
 
-    public double geteCMinimo() {
-        return eCMinimo;
+    public double getEcMinimo() {
+        return ecMinimo;
     }
 
-    public void seteCMinimo(double eCMinimo) {
-        this.eCMinimo = eCMinimo;
+    public void setEcMinimo(double ecMinimo) {
+        this.ecMinimo = ecMinimo;
     }
 
-    public double geteCMaximo() {
-        return eCMaximo;
+    public double getEcMaximo() {
+        return ecMaximo;
     }
 
-    public void seteCMaximo(double eCMaximo) {
-        this.eCMaximo = eCMaximo;
+    public void setEcMaximo(double ecMaximo) {
+        this.ecMaximo = ecMaximo;
     }
 
     public double getTemperaturaIdeal() {
@@ -77,17 +79,5 @@ public class ParametroIdealEntity {
 
     public void setTemperaturaIdeal(double temperaturaIdeal) {
         this.temperaturaIdeal = temperaturaIdeal;
-    }
-
-    @Override
-    public String toString() {
-        return "ParametroIdealEntity{" +
-                "id=" + id +
-                ", pHMinimo=" + pHMinimo +
-                ", pHMaximo=" + pHMaximo +
-                ", eCMinimo=" + eCMinimo +
-                ", eCMaximo=" + eCMaximo +
-                ", temperaturaIdeal=" + temperaturaIdeal +
-                '}';
     }
 }

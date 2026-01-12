@@ -25,6 +25,8 @@ public class LeituraEntity {
     @ColumnInfo(name = "data_leitura")
     private long dataLeitura;
 
+    public LeituraEntity(){}
+
     public LeituraEntity(long ph, long temperatura, long ec, long ppm, String observacao,
                          long volumaeAtualDaCaixa, long dataLeitura) {
         this.ph = ph;

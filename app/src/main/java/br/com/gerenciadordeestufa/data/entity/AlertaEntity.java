@@ -22,6 +22,8 @@ public class AlertaEntity {
         this.tipoAlerta = tipoAlerta;
     }
 
+    public AlertaEntity(){}
+
     public long getId() {
         return id;
     }
