@@ -18,6 +18,7 @@ public class CaixaDaguaEnity {
 
     public CaixaDaguaEnity(double volume, String s){
         this.volume = volume;
+        this.nome = s;
     }
 
     public long getId() {
