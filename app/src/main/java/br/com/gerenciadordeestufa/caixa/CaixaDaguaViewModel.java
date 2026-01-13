@@ -9,6 +9,7 @@ public class CaixaDaguaViewModel extends ViewModel {
     public enum Evento {
         IR_PARA_CADASTRO_CAIXA,
         IR_PARA_HISTORICO,
+        CAIXA_SELECIONADA,
         VOLTAR
     }
 
@@ -28,6 +29,10 @@ public class CaixaDaguaViewModel extends ViewModel {
 
     public void onVoltarClicado(){
         evento.setValue(Evento.VOLTAR);
+    }
+
+    public void onCaixaSelecionada(){
+        evento.setValue(Evento.CAIXA_SELECIONADA);
     }
 
     public void limparEvento() {

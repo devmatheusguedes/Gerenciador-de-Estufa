@@ -17,7 +17,18 @@ import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 public class CaixaDaguaAdapter
         extends RecyclerView.Adapter<CaixaDaguaAdapter.ViewHolder> {
 
+    // 🔹 Interface de clique
+    public interface OnItemClickListener {
+        void onItemClick(CaixaDaguaEnity caixa);
+    }
+
     private List<CaixaDaguaEnity> lista = new ArrayList<>();
+    private OnItemClickListener listener;
+
+    // 🔹 Permite que o Fragment injete o listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
 
     public void submitList(List<CaixaDaguaEnity> novaLista) {
         lista = novaLista;
@@ -41,8 +52,7 @@ public class CaixaDaguaAdapter
             int position
     ) {
         CaixaDaguaEnity caixa = lista.get(position);
-        holder.nome.setText(caixa.getNome());
-        holder.volume.setText("Volume: " + caixa.getVolume());
+        holder.bind(caixa, listener);
     }
 
     @Override
@@ -58,6 +68,19 @@ public class CaixaDaguaAdapter
             nome = itemView.findViewById(R.id.tvNome);
             volume = itemView.findViewById(R.id.tvVolume);
         }
+
+        void bind(
+                CaixaDaguaEnity caixa,
+                OnItemClickListener listener
+        ) {
+            nome.setText(caixa.getNome());
+            volume.setText("Volume: " + caixa.getVolume());
+
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(caixa);
+                }
+            });
+        }
     }
 }
-
