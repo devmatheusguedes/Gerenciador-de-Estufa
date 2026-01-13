@@ -56,7 +56,7 @@
         android:label="CadastroEstufaFragment" />
     <fragment
         android:id="@+id/cadastrarCaixaDaguaFragment"
-        android:name="br.com.gerenciadordeestufa.caixa.CadastrarCaixaDaguaFragment"
+        android:name="br.com.gerenciadordeestufa.cadastrocaixa.CadastrarCaixaDaguaFragment"
         android:label="CadastrarCaixaDaguaFragment" />
     <fragment
         android:id="@+id/parametrosIdeaisFragment"

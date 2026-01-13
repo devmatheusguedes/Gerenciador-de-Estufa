@@ -12,25 +12,27 @@ public class LeituraEntity {
     @PrimaryKey(autoGenerate = true)
     private long id;
     @ColumnInfo(name = "ph")
-    private double pH;
+    private double ph;
 
     private double temperatura;
     @ColumnInfo(name = "ec")
-    private double eC;
+    private double ec;
     @ColumnInfo(name = "ppm")
-    private double pPM;
+    private double ppm;
     private String observacao;
     @ColumnInfo(name = "volume_atual_da_caixa")
     private long volumaeAtualDaCaixa;
     @ColumnInfo(name = "data_leitura")
     private long dataLeitura;
 
-    public LeituraEntity(long pH, long temperatura, long eC, long pPM, String observacao,
+    public LeituraEntity(){}
+
+    public LeituraEntity(long ph, long temperatura, long ec, long ppm, String observacao,
                          long volumaeAtualDaCaixa, long dataLeitura) {
-        this.pH = pH;
+        this.ph = ph;
         this.temperatura = temperatura;
-        this.eC = eC;
-        this.pPM = pPM;
+        this.ec = ec;
+        this.ppm = ppm;
         this.observacao = observacao;
         this.volumaeAtualDaCaixa = volumaeAtualDaCaixa;
         this.dataLeitura = dataLeitura;
@@ -40,12 +42,16 @@ public class LeituraEntity {
         return id;
     }
 
-    public double getpH() {
-        return pH;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setpH(double pH) {
-        this.pH = pH;
+    public double getPh() {
+        return ph;
+    }
+
+    public void setPh(double ph) {
+        this.ph = ph;
     }
 
     public double getTemperatura() {
@@ -56,20 +62,20 @@ public class LeituraEntity {
         this.temperatura = temperatura;
     }
 
-    public double geteC() {
-        return eC;
+    public double getEc() {
+        return ec;
     }
 
-    public void seteC(double eC) {
-        this.eC = eC;
+    public void setEc(double ec) {
+        this.ec = ec;
     }
 
-    public double getpPM() {
-        return pPM;
+    public double getPpm() {
+        return ppm;
     }
 
-    public void setpPM(double pPM) {
-        this.pPM = pPM;
+    public void setPpm(double ppm) {
+        this.ppm = ppm;
     }
 
     public String getObservacao() {

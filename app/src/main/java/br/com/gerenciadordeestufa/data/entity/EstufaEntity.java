@@ -14,8 +14,14 @@ public class EstufaEntity {
         this.nome = nome;
     }
 
+    public EstufaEntity(){}
+
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNome() {

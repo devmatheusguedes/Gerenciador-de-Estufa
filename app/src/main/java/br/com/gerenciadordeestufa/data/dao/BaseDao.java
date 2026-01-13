@@ -6,6 +6,8 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Update;
 
+import java.util.List;
+
 @Dao
 public interface BaseDao<T> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -16,4 +18,5 @@ public interface BaseDao<T> {
 
     @Delete
     void delete(T entity);
+
 }
