@@ -1,17 +1,20 @@
 package br.com.gerenciadordeestufa.cadastrocaixa;
 
-import androidx.lifecycle.ViewModel;
-import java.util.concurrent.ExecutorService; // Importar
-import java.util.concurrent.Executors;       // Importar
+import android.util.Log;
 
-import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity; // Verifique se corrigiu o nome para Entity
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 import br.com.gerenciadordeestufa.data.repository.CaixaDaguaRepository;
 
 public class CadastroCaixaViewModelPersistence extends ViewModel {
 
     private final CaixaDaguaRepository repository;
-
-    // 1. Criamos um Executor para rodar tarefas em background
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public CadastroCaixaViewModelPersistence(CaixaDaguaRepository repository) {
@@ -20,10 +23,7 @@ public class CadastroCaixaViewModelPersistence extends ViewModel {
 
     public void salvarCaixa(String nome, double capacidade) {
         CaixaDaguaEnity caixa = new CaixaDaguaEnity(capacidade, nome);
-
-        // 2. Envolvemos a chamada do repositório dentro do executor
-        executor.execute(() -> {
-            repository.inserir(caixa);
-        });
+        executor.execute(() -> repository.inserir(caixa));
     }
+
 }

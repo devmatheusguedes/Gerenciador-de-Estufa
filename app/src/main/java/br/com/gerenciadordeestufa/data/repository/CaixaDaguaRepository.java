@@ -2,6 +2,8 @@ package br.com.gerenciadordeestufa.data.repository;
 
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +25,7 @@ public class CaixaDaguaRepository{
         dao.insert(enity);
     }
 
-    public List<CaixaDaguaEnity> listarTodasAsCaixas(){
+    public LiveData<List<CaixaDaguaEnity>> listarTodasAsCaixas(){
         return dao.getAll();
     }
 }

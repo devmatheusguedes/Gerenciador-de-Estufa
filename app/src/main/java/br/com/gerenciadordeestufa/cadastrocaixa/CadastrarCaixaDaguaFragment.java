@@ -1,28 +1,25 @@
 package br.com.gerenciadordeestufa.cadastrocaixa;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import br.com.gerenciadordeestufa.R;
-import br.com.gerenciadordeestufa.ViewConfigurator;
 import br.com.gerenciadordeestufa.data.database.AppDatabase;
 import br.com.gerenciadordeestufa.data.repository.CaixaDaguaRepository;
 
 public class CadastrarCaixaDaguaFragment extends Fragment {
 
-    // 🔹 ViewModel responsável APENAS por eventos (navegação / ações)
     private CadastrarCaixaDaguaViewModelNavigation navViewModel;
-
-    // 🔹 ViewModel responsável pela persistência (Room / Repository)
     private CadastroCaixaViewModelPersistence dataViewModel;
 
     @Nullable
@@ -42,55 +39,57 @@ public class CadastrarCaixaDaguaFragment extends Fragment {
     ) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 🔹 1. Cria o Repository a partir do AppDatabase
+        // 🔹 Repository
         CaixaDaguaRepository repository =
                 new CaixaDaguaRepository(
                         AppDatabase.getDatabase(requireContext()).caixaDaguaDao()
                 );
 
-        // 🔹 2. Cria a Factory da ViewModel de persistência
+        // 🔹 Factory
         CadastroCaixaViewModelFactory factory =
                 new CadastroCaixaViewModelFactory(repository);
 
-        // 🔹 3. ViewModel de navegação (sem dependências)
+        // 🔹 ViewModels
         navViewModel =
                 new ViewModelProvider(this)
                         .get(CadastrarCaixaDaguaViewModelNavigation.class);
 
-        // 🔹 4. ViewModel de dados (com Repository via Factory)
         dataViewModel =
                 new ViewModelProvider(this, factory)
                         .get(CadastroCaixaViewModelPersistence.class);
 
-        // 🔹 5. Observa eventos disparados pela ViewModel de navegação
+        // 🔹 Observa evento de navegação
         navViewModel.getEvento().observe(getViewLifecycleOwner(), evento -> {
             if (evento == null) return;
 
-            switch (evento) {
-                case ACAO_CADASTRAR:
-                    // 🔹 Aqui você coleta os dados da tela
-                    EditText edtNome = view.findViewById(R.id.inputNome);
-                    EditText edtCapacidade = view.findViewById(R.id.inputVolumeMaximo);
+            if (evento == CadastrarCaixaDaguaViewModelNavigation.Evento.ACAO_CADASTRAR) {
 
-                    String nome = edtNome.getText().toString();
-                    Log.d("NOME", "nome da caixa: " + nome);
-                    double capacidade = Double.parseDouble(
-                            edtCapacidade.getText().toString()
-                    );
-                    // 🔹 Chama a ViewModel de persistência
+                TextInputEditText edtNome = view.findViewById(R.id.inputNome);
+                TextInputEditText edtCapacidade = view.findViewById(R.id.inputVolumeMaximo);
+
+                String nome = edtNome.getText() != null ? edtNome.getText().toString() : "";
+                String capStr = edtCapacidade.getText() != null ? edtCapacidade.getText().toString() : "";
+
+                if (nome.isEmpty() || capStr.isEmpty()) {
+                    Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                try {
+                    double capacidade = Double.parseDouble(capStr);
                     dataViewModel.salvarCaixa(nome, capacidade);
-                    break;
-
+                    Toast.makeText(getContext(), "Caixa salva com sucesso", Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Capacidade inválida", Toast.LENGTH_SHORT).show();
+                }
             }
 
             navViewModel.limparEvento();
         });
 
-        // 🔹 6. Configuração dos listeners da View
-        ViewConfigurator.configurar(view, v -> {
-            v.findViewById(R.id.btnCadastrar).setOnClickListener(l -> {
-                navViewModel.onAcaoCadastrar();
-            });
-        });
+        // 🔹 Botão
+        view.findViewById(R.id.btnCadastrar).setOnClickListener(v ->
+                navViewModel.onAcaoCadastrar()
+        );
     }
 }
