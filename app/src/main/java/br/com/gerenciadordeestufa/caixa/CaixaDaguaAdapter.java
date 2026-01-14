@@ -1,5 +1,6 @@
 package br.com.gerenciadordeestufa.caixa;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,19 @@ import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 public class CaixaDaguaAdapter
         extends RecyclerView.Adapter<CaixaDaguaAdapter.ViewHolder> {
 
+    // 🔹 Interface de clique
+    public interface OnItemClickListener {
+        void onItemClick(CaixaDaguaEnity caixa);
+    }
+
     private List<CaixaDaguaEnity> lista = new ArrayList<>();
+    private OnItemClickListener listener;
+    private int selectPosition = RecyclerView.NO_POSITION;
+
+    // 🔹 Permite que o Fragment injete o listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
 
     public void submitList(List<CaixaDaguaEnity> novaLista) {
         lista = novaLista;
@@ -41,8 +54,11 @@ public class CaixaDaguaAdapter
             int position
     ) {
         CaixaDaguaEnity caixa = lista.get(position);
-        holder.nome.setText(caixa.getNome());
-        holder.volume.setText("Volume: " + caixa.getVolume());
+        holder.bind(caixa, listener);
+
+        if (position == selectPosition){
+            holder.itemView.setBackgroundColor(Color.rgb(34, 69, 70));
+        }
     }
 
     @Override
@@ -57,7 +73,22 @@ public class CaixaDaguaAdapter
             super(itemView);
             nome = itemView.findViewById(R.id.tvNome);
             volume = itemView.findViewById(R.id.tvVolume);
+
+
+        }
+
+        void bind(
+                CaixaDaguaEnity caixa,
+                OnItemClickListener listener
+        ) {
+            nome.setText(caixa.getNome());
+            volume.setText("Volume: " + caixa.getVolume());
+
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(caixa);
+                }
+            });
         }
     }
 }
-

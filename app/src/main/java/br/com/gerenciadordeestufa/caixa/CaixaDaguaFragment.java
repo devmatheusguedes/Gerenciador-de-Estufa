@@ -1,12 +1,20 @@
 package br.com.gerenciadordeestufa.caixa;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.ColorKt;
+import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -42,6 +50,7 @@ public class CaixaDaguaFragment extends Fragment {
         adapter = new CaixaDaguaAdapter();
         recyclerView.setAdapter(adapter);
 
+
         CaixaDaguaRepository repository = new CaixaDaguaRepository(AppDatabase.getDatabase(requireContext()).caixaDaguaDao());
 
         ListaCaixaViewModelFactory factory = new ListaCaixaViewModelFactory(repository);
@@ -60,6 +69,10 @@ public class CaixaDaguaFragment extends Fragment {
                 new ViewModelProvider(this).get(CaixaDaguaViewModel.class);
 
         // 2️⃣ Observa os eventos do ViewModel
+        adapter.setOnItemClickListener(caixa -> {
+            caixaDaguaViewModel.onCaixaSelecionada(caixa);
+            Log.d("CLICK_CAIXA", "Caixa Clicada: " + caixa.getNome());
+        });
         caixaDaguaViewModel.getEvento().observe(
                 getViewLifecycleOwner(),
                 evento -> {
@@ -80,6 +93,11 @@ public class CaixaDaguaFragment extends Fragment {
                                     .navigate(
                                             R.id.action_caixaDaguaFragment_to_historicoDeLeituraFragment
                                     );
+                            Toast.makeText(getContext(), "Caixa selecionada: "+ caixaDaguaViewModel.getEntity(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case CAIXA_SELECIONADA:
+                            Toast.makeText(getContext(), "Caixa selecionada com sucesso", Toast.LENGTH_SHORT).show();
+
                             break;
 
                     }

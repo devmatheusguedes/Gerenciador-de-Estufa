@@ -26,4 +26,6 @@ public class CadastroCaixaViewModelPersistence extends ViewModel {
         executor.execute(() -> repository.inserir(caixa));
     }
 
+
+
 }
