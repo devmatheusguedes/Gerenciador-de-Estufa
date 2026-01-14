@@ -40,6 +40,9 @@ public class CaixaDaguaViewModel extends ViewModel {
         evento.setValue(Evento.CAIXA_SELECIONADA);
     }
 
+    public CaixaDaguaEnity getEntity() {
+        return entity;
+    }
 
     public void limparEvento() {
         evento.setValue(null);

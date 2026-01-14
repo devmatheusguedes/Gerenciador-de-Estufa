@@ -1,5 +1,6 @@
 package br.com.gerenciadordeestufa.caixa;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ public class CaixaDaguaAdapter
 
     private List<CaixaDaguaEnity> lista = new ArrayList<>();
     private OnItemClickListener listener;
+    private int selectPosition = RecyclerView.NO_POSITION;
 
     // 🔹 Permite que o Fragment injete o listener
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -53,6 +55,10 @@ public class CaixaDaguaAdapter
     ) {
         CaixaDaguaEnity caixa = lista.get(position);
         holder.bind(caixa, listener);
+
+        if (position == selectPosition){
+            holder.itemView.setBackgroundColor(Color.rgb(34, 69, 70));
+        }
     }
 
     @Override
@@ -67,6 +73,8 @@ public class CaixaDaguaAdapter
             super(itemView);
             nome = itemView.findViewById(R.id.tvNome);
             volume = itemView.findViewById(R.id.tvVolume);
+
+
         }
 
         void bind(

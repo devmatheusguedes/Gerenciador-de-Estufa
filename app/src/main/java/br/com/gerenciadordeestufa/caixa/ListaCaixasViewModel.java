@@ -20,4 +20,6 @@ public class ListaCaixasViewModel extends ViewModel {
     public LiveData<List<CaixaDaguaEnity>> getCaixas() {
         return caixas;
     }
+
+
 }
