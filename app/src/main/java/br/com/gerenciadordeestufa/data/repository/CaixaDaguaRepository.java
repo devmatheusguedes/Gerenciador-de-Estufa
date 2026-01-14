@@ -28,4 +28,12 @@ public class CaixaDaguaRepository{
     public LiveData<List<CaixaDaguaEnity>> listarTodasAsCaixas(){
         return dao.getAll();
     }
+
+    public void deletar(CaixaDaguaEnity enity){
+        dao.delete(enity);
+    }
+
+    public void update(CaixaDaguaEnity caixaDaguaEnity){
+        dao.update(caixaDaguaEnity);
+    }
 }

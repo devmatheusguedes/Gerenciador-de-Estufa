@@ -4,8 +4,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
+
 public class CadastrarCaixaDaguaViewModelNavigation extends ViewModel {
-    public enum Evento { ACAO_CADASTRAR }
+
+    private CaixaDaguaEnity enity;
+    public enum Evento { ACAO_CADASTRAR,
+    CAIXA_SELECIONADA}
 
     private final MutableLiveData<Evento> evento = new MutableLiveData<>();
 
@@ -16,6 +21,7 @@ public class CadastrarCaixaDaguaViewModelNavigation extends ViewModel {
     public void onAcaoCadastrar() {
         evento.setValue(Evento.ACAO_CADASTRAR);
     }
+
 
     public void limparEvento() {
         evento.setValue(null);

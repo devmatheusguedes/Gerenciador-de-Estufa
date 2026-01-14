@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import br.com.gerenciadordeestufa.cadastrocaixa.CadastrarCaixaDaguaViewModelNavigation;
+import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
+
 public class CaixaDaguaViewModel extends ViewModel {
 
     public enum Evento {
@@ -14,6 +17,7 @@ public class CaixaDaguaViewModel extends ViewModel {
     }
 
     private final MutableLiveData<Evento> evento = new MutableLiveData<>();
+    private CaixaDaguaEnity entity;
 
     public LiveData<Evento> getEvento() {
         return evento;
@@ -31,9 +35,11 @@ public class CaixaDaguaViewModel extends ViewModel {
         evento.setValue(Evento.VOLTAR);
     }
 
-    public void onCaixaSelecionada(){
+    public void onCaixaSelecionada(CaixaDaguaEnity entity){
+        this.entity = entity;
         evento.setValue(Evento.CAIXA_SELECIONADA);
     }
+
 
     public void limparEvento() {
         evento.setValue(null);

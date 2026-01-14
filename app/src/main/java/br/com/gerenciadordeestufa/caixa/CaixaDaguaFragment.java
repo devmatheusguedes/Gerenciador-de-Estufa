@@ -64,7 +64,8 @@ public class CaixaDaguaFragment extends Fragment {
 
         // 2️⃣ Observa os eventos do ViewModel
         adapter.setOnItemClickListener(caixa -> {
-            caixaDaguaViewModel.onCaixaSelecionada();
+            caixaDaguaViewModel.onCaixaSelecionada(caixa);
+
             Log.d("CLICK_CAIXA", "Caixa Clicada: " + caixa.getNome());
         });
         caixaDaguaViewModel.getEvento().observe(
