@@ -52,7 +52,7 @@
         android:label="AlertaFragment" />
     <fragment
         android:id="@+id/cadastroEstufaFragment"
-        android:name="br.com.gerenciadordeestufa.estufa.CadastroEstufaFragment"
+        android:name="br.com.gerenciadordeestufa.cadastroestufa.CadastroEstufaFragment"
         android:label="CadastroEstufaFragment" />
     <fragment
         android:id="@+id/cadastrarCaixaDaguaFragment"

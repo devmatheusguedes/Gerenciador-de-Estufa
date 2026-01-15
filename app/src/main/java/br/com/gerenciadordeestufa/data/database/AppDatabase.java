@@ -25,7 +25,7 @@ import br.com.gerenciadordeestufa.data.entity.TipoAlerta;
                 EstufaEntity.class, ParametroIdealEntity.class,
                 AlertaEntity.class
         },
-        version = 1
+        version = 2
 )
 @TypeConverters({TipoAlertaConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
@@ -42,8 +42,11 @@ public abstract class AppDatabase extends RoomDatabase {
         if (INSTANCE == null){
             synchronized (AppDatabase.class){
                 if (INSTANCE == null){
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, "gerenciador_estufa.db").build();
+                    INSTANCE =
+                            Room.databaseBuilder(context.getApplicationContext(),
+                            AppDatabase.class, "gerenciador_estufa.db")
+                                    .fallbackToDestructiveMigration()
+                                    .build();
                 }
             }
         }

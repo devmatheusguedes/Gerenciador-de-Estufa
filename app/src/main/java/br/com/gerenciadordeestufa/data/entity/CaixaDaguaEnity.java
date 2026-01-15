@@ -64,6 +64,14 @@ public class CaixaDaguaEnity {
         this.volume = volume;
     }
 
+    public int getIdEstufa() {
+        return idEstufa;
+    }
+
+    public void setIdEstufa(int idEstufa) {
+        this.idEstufa = idEstufa;
+    }
+
     @Override
     public String toString() {
         return "CaixaDaguaEnity{" +

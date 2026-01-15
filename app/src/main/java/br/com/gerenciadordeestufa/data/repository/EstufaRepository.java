@@ -1,5 +1,7 @@
 package br.com.gerenciadordeestufa.data.repository;
 
+import androidx.lifecycle.LiveData;
+
 import java.util.List;
 
 import br.com.gerenciadordeestufa.data.dao.EstufaDao;
@@ -21,15 +23,19 @@ public class EstufaRepository{
         estufaDao.update(entity);
     }
 
+    public EstufaEntity pesquisarPorNome(String nome){
+        return estufaDao.findByName(nome);
+    }
+
     public void deletar(EstufaEntity estufaEntity){
         estufaDao.delete(estufaEntity);
     }
 
-    public List<EstufaComCaixas> listarCaixasDagua(){
+    public LiveData<List<EstufaComCaixas>> listarCaixasDagua(){
         return estufaDao.listarCaixasDaEStufa();
     }
 
-    public List<EstufaEntity> listarEstufas(){
+    public LiveData<List<EstufaEntity>> listarEstufas(){
         return estufaDao.getAll();
     }
 }
