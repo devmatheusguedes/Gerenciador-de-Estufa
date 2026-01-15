@@ -1,4 +1,4 @@
-package br.com.gerenciadordeestufa.estufa;
+package br.com.gerenciadordeestufa.cadastroestufa;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

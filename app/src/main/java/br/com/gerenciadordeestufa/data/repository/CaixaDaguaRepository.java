@@ -16,7 +16,6 @@ import br.com.gerenciadordeestufa.data.entity.CaixaDaguaEnity;
 
 public class CaixaDaguaRepository{
     private final CaixaDaguaDao dao;
-    private final ExecutorService executor = Executors.newSingleThreadExecutor();
     public CaixaDaguaRepository(CaixaDaguaDao dao) {
         this.dao = dao;
     }

@@ -91,13 +91,13 @@ public class CaixaDaguaFragment extends Fragment {
                             NavHostFragment
                                     .findNavController(this)
                                     .navigate(
-                                            R.id.action_caixaDaguaFragment_to_historicoDeLeituraFragment
+
+                                                     R.id.action_caixaDaguaFragment_to_historicoDeLeituraFragment
                                     );
                             Toast.makeText(getContext(), "Caixa selecionada: "+ caixaDaguaViewModel.getEntity(), Toast.LENGTH_SHORT).show();
                             break;
                         case CAIXA_SELECIONADA:
                             Toast.makeText(getContext(), "Caixa selecionada com sucesso", Toast.LENGTH_SHORT).show();
-
                             break;
 
                     }

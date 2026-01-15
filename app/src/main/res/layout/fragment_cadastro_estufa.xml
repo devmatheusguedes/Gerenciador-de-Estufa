@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+            android:id="@+id/inputNomeEstufa"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="40dp"
